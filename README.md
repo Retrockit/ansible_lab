@@ -56,6 +56,14 @@ This lab will consist of three nodes:
 
     `git clone https://github.com/Retrockit/ansible_lab`
 
+3. Open your favorite text editor, within the ansible_lab folder you're going to open the `Vagrantfile`
+
+5. Uncomment lines 44-45 and comment-out line 48
+
+6. Save and exit out the file
+
+6. Open a Terminal window and type:
+
     `cd ansible_lab`
     
     `vagrant up`
