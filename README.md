@@ -15,9 +15,75 @@ Please make sure the following is installed on your local machine:
 This lab will consist of three nodes:
 
 - One Ansible Controlplane node
-- Two Client Nodes 
+- Three Worker Nodes
+
+# HOW-TO-WINDOWS
+
+1. Make sure the preqs are installed
+
+2. open a powershell window and type
+
+    `git clone https://github.com/Retrockit/ansible_lab`
+
+     `cd ansible_lab`
+
+     `vagrant up`
+3. Wait for the VMs to be created (give or take 3-5 minutes)
+
+4. Once done type:
+
+    `vagrant ssh controlnode`
+
+5. Once you've remoted into the controlnode type:
+
+    `cd ansible`
+
+6. You're all set. When done type: 
+
+    `exit`
+
+7. To destroy lab type:
+
+    `vagrant destroy -f`
 
 
+# HOW-TO-LINUX/macOS(Intel)
 
+1. Make sure the preqs are installed
+
+2. Open a terminal window and type:
+
+
+    `git clone https://github.com/Retrockit/ansible_lab`
+
+    `cd ansible_lab`
+    
+    `vagrant up`
+
+3. Wait for the VMs to be created (give or take 3-5 minutes)
+
+4. Once done type:
+
+    `vagrant ssh controlnode`
+
+5. Once you've remoted into the controlnode type:
+
+    `cd ansible`
+
+    This will take you into the ansible folder with all that you need to try out ansible: 
+    
+    - ansible.cfg pointing to hosts.ini inventory file 
+    
+    - hosts.ini with all the vagrant machines
+
+    - blank playbook.yml
+
+6. You're all set. When done type: 
+
+    `exit`
+
+7. To destroy lab type:
+
+    `vagrant destroy -f`
 
 
