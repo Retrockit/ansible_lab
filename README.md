@@ -12,6 +12,11 @@ Please make sure the following is installed on your local machine:
 
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
+This lab will consist of three nodes:
+
+- One Ansible Controlplane node
+- Two Client Nodes 
+
 
 
 
