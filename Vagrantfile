@@ -17,11 +17,19 @@ public_key = File.read("id_rsa.pub")
 $pubkeyex = <<SCRIPT
 echo 'copying public ssh keys to VMs'
 mkdir -p /home/vagrant/.ssh
+chmod 700 /home/vagrant/.ssh
 echo '#{public_key}' >> /home/vagrant/.ssh/authorized_keys
+chmod -R 600 /home/vagrant/.ssh/authorized_keys
 echo 'Host 192.168.60.*' >> /home/vagrant/.ssh/config
 echo 'StrictHostKeyChecking no' >> /home/vagrant/.ssh/config
 echo 'UserKnownHostsFile=/dev/null' >> /home/vagrant/.ssh/config
+chmod 600 -R /home/vagrant/.ssh/config
 chown -R vagrant:vagrant /home/vagrant/.ssh/
+SCRIPT
+
+$privkey = <<SCRIPT
+echo 'Set permission for private key'
+chmod 600 /home/vagrant/.ssh/id_rsa
 SCRIPT
 
 Vagrant.configure("2") do |config|
@@ -41,8 +49,8 @@ Vagrant.configure("2") do |config|
     
 
     #Sync Folder Section. This is for Linux, macOS systems
-    #control.vm.synced_folder "./ansible", "/home/vagrant/ansible",
-    #type: "rsync",rsync_exclude: ".git/"
+#    control.vm.synced_folder "./ansible", "/home/vagrant/ansible",
+#    type: "rsync",rsync_exclude: ".git/"
 
     #Sync Folder Section. This is for Windows systems
     config.vm.synced_folder "./ansible", "/home/vagrant/ansible", type: "smb"
@@ -51,6 +59,7 @@ Vagrant.configure("2") do |config|
     control.vm.provision "file", source: "id_rsa", destination: "/home/vagrant/.ssh/id_rsa"
     control.vm.provision "shell", inline: $install
     control.vm.provision "shell", inline: $pubkeyex
+    control.vm.provision "shell", inline: $privkey
     control.vm.provision "shell", inline: "dnf install ansible -y"
     end
 
