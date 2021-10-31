@@ -53,7 +53,7 @@ Vagrant.configure("2") do |config|
 #    type: "rsync",rsync_exclude: ".git/"
 
     #Sync Folder Section. This is for Windows systems
-    config.vm.synced_folder "./ansible", "/home/vagrant/ansible", type: "smb"
+    control.vm.synced_folder "./ansible", "/home/vagrant/ansible", type: "smb"
 
     #Provisioning Section
     control.vm.provision "file", source: "id_rsa", destination: "/home/vagrant/.ssh/id_rsa"
