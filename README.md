@@ -27,8 +27,17 @@ This lab will consist of three nodes:
 
      `cd ansible_lab`
 
-     `vagrant up`
-3. Wait for the VMs to be created (give or take 3-5 minutes)
+3. type: `rm id_rsa*` to delete the reference keys. You're going to generate your own keys.
+
+        a. In the same powershell window type: ssh-keygen
+
+        b. When prompted to name keys type: id_rsa
+
+        c. your id_rsa and id_rsa.pub keys will be saved to the current directory
+
+3. Wait for the VMs to be created. Vagrant will prompt for your windows credentials to create the SMB share. Please provide when asked.
+
+4. Wait about 3-5 minutes for the VMs to be create
 
 4. Once done type:
 
@@ -37,6 +46,14 @@ This lab will consist of three nodes:
 5. Once you've remoted into the controlnode type:
 
     `cd ansible`
+
+    This will take you into the ansible folder with all that you need to try out ansible: 
+    
+    - ansible.cfg pointing to hosts.ini inventory file 
+    
+    - hosts.ini with all the vagrant machines
+
+    - blank playbook.yml
 
 6. You're all set. When done type: 
 
@@ -65,8 +82,14 @@ This lab will consist of three nodes:
 6. Open a Terminal window and type:
 
     `cd ansible_lab`
-    
-    `vagrant up`
+
+7. type: `rm id_rsa*` to delete the reference keys. You're going to generate your own keys.
+
+        a. In terminal type: ssh-keygen
+
+        b. name the keys: id_rsa
+
+        c. Press Enter twice to save the public and private keys to the current directory
 
 3. Wait for the VMs to be created (give or take 3-5 minutes)
 
