@@ -10,9 +10,9 @@ Please make sure the following is installed on your local machine:
 
 - [Vagrant](https://www.vagrantup.com/downloads)
 
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [VirtualBox](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html#vbox)
 
-- [VirtualBox Extension Pack](https://download.virtualbox.org/virtualbox/6.1.32/Oracle_VM_VirtualBox_Extension_Pack-6.1.32-149290.vbox-extpack)
+- [VirtualBox Extension Pack](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html#extpack)
 
 This lab will consist of four nodes:
 
