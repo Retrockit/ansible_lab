@@ -10,16 +10,18 @@ Please make sure the following is installed on your local machine:
 
 - [Vagrant](https://www.vagrantup.com/downloads)
 
-- [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-This lab will consist of three nodes:
+- [VirtualBox Extension Pack](https://download.virtualbox.org/virtualbox/6.1.32/Oracle_VM_VirtualBox_Extension_Pack-6.1.32-149290.vbox-extpack)
+
+This lab will consist of four nodes:
 
 - One Ansible Controlplane node
 - Three Worker Nodes
 
 # HOW-TO-WINDOWS
 
-1. Make sure the prequisites are installed
+1. Make sure the prerequisites are installed
 
 2. open a powershell window and type
 
@@ -37,7 +39,6 @@ This lab will consist of three nodes:
         
 4. type: `vagrant up`
 
-3. type: `vagrant up`
 
 4. Wait about 3-5 minutes for the VMs to be create
     (NOTE: You will prompted once to enter credentials to mount the SMB share. Make sure to enter your windows username and password correctly.)
@@ -72,7 +73,7 @@ This lab will consist of three nodes:
 
 # HOW-TO-LINUX
 
-1. Make sure the prequisites are installed
+1. Make sure the prerequisites are installed
 
 2. Open a terminal window and type:
 
