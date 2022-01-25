@@ -34,6 +34,8 @@ This lab will consist of three nodes:
         b. When prompted to name keys type: id_rsa
 
         c. your id_rsa and id_rsa.pub keys will be saved to the current directory
+        
+4. type: `vagrant up`
 
 3. type: `vagrant up`
 
