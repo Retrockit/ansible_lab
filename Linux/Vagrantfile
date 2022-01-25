@@ -48,12 +48,9 @@ Vagrant.configure("2") do |config|
     control.vm.network :private_network, ip: "192.168.60.2"
     
 
-    #Sync Folder Section. This is for Linux, macOS systems
-#    control.vm.synced_folder "./ansible", "/home/vagrant/ansible",
-#    type: "rsync",rsync_exclude: ".git/"
-
-    #Sync Folder Section. This is for Windows systems
-    control.vm.synced_folder "./ansible", "/home/vagrant/ansible", type: "smb"
+    #Sync Folder Section.
+    control.vm.synced_folder "./ansible", "/home/vagrant/ansible",
+    type: "rsync",rsync_exclude: ".git/"
 
     #Provisioning Section
     control.vm.provision "file", source: "id_rsa", destination: "/home/vagrant/.ssh/id_rsa"

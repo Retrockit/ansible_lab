@@ -2,7 +2,7 @@
 
 The purpose of this project is to provide a POC of a portable ansible lab via Vagrant and Virtualbox.
 
-This lab can be utilized regardless if you're on Windows, Linux or Mac (x86_64 Macs only).
+This lab can be utilized regardless if you're on Windows or Linux.
 
 Please make sure the following is installed on your local machine:
 
@@ -19,13 +19,13 @@ This lab will consist of three nodes:
 
 # HOW-TO-WINDOWS
 
-1. Make sure the preqs are installed
+1. Make sure the prequisites are installed
 
 2. open a powershell window and type
 
     `git clone https://github.com/Retrockit/ansible_lab`
 
-     `cd ansible_lab`
+     `cd ansible_lab\Windows`
 
 3. type: `rm id_rsa*` to delete the reference keys. You're going to generate your own keys.
 
@@ -35,13 +35,16 @@ This lab will consist of three nodes:
 
         c. your id_rsa and id_rsa.pub keys will be saved to the current directory
 
-3. Wait for the VMs to be created. Vagrant will prompt for your windows credentials to create the SMB share. Please provide when asked.
+3. type: `vagrant up`
 
 4. Wait about 3-5 minutes for the VMs to be create
+    (NOTE: You will prompted once to enter credentials to mount the SMB share. Make sure to enter your windows username and password correctly.)
 
 4. Once done type:
 
     `vagrant ssh controlnode`
+
+
 
 5. Once you've remoted into the controlnode type:
 
@@ -64,24 +67,20 @@ This lab will consist of three nodes:
     `vagrant destroy -f`
 
 
-# HOW-TO-LINUX/macOS(Intel)
 
-1. Make sure the preqs are installed
+# HOW-TO-LINUX
+
+1. Make sure the prequisites are installed
 
 2. Open a terminal window and type:
 
 
     `git clone https://github.com/Retrockit/ansible_lab`
 
-3. Open your favorite text editor, within the ansible_lab folder you're going to open the `Vagrantfile`
-
-5. Uncomment lines 44-45 and comment-out line 48
-
-6. Save and exit out the file
 
 6. Open a Terminal window and type:
 
-    `cd ansible_lab`
+    `cd ansible_lab/Linux`
 
 7. type: `rm id_rsa*` to delete the reference keys. You're going to generate your own keys.
 
@@ -90,6 +89,8 @@ This lab will consist of three nodes:
         b. name the keys: id_rsa
 
         c. Press Enter twice to save the public and private keys to the current directory
+
+5. type: `vagrant up`
 
 3. Wait for the VMs to be created (give or take 3-5 minutes)
 
